@@ -16,6 +16,8 @@ Please use Camtasia (recorded using it) or a VLC player in order to watch the re
 
 # Link to Installer Download (Windows only!)
   https://www.dropbox.com/s/ef38sas1o7vxji8/CoolPhotoSearchSetup.msi?dl=0
+  
+  The installation file also exists under the Setup folder
 
 # Source code
   In order to compile and run in Visual Studio 2017 - there is need to uninstall the
