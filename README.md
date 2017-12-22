@@ -19,21 +19,21 @@ Installer (in case it was installed) and define relevant System Environment vari
 
 3) Next start a multi-threaded loop and in that loop - bind metadata Item to the UI list
 
-  a. Binding use UI thread (Dispatcher)
+a. Binding use UI thread (Dispatcher)
 
-  b. As soon as Image Name is binded to the UI element it calls an ImageConverter. 
+b. As soon as Image Name is binded to the UI element it calls an ImageConverter. 
      In this converter - load the actual image using asynchronous process so it won't 
      block the UI thread
 
 4) After adding the items to the UI - start another multi-threaded loop
 
-  a. This loop also runs in asynchronous mode
+a. This loop also runs in asynchronous mode
 
-  b. In this loop - call the Google Vision API to get the annotation information
+b. In this loop - call the Google Vision API to get the annotation information
 
-  c. After receiving the info - bind it to the UI text property
+c. After receiving the info - bind it to the UI text property
 
-  d. Next this is indexed in the Lucene.Net
+d. Next this is indexed in the Lucene.Net
 
 5) From here it is pretty straightforward - call the index based on user query input
 
