@@ -37,4 +37,4 @@ d. Next this is indexed in the Lucene.Net
 5) From here it is pretty straightforward - call the index based on user query input
 
 # Both the above loop #3 and #4 are wrapped in a while loop which is used for processing 10 items at
-a time to control number of threads running at the same time (+ to improve the UI response)
+# a time to control number of threads running at the same time (+ to improve the UI response)
