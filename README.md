@@ -6,8 +6,7 @@ CS 410 Final Project (My Photos Search)
   https://drive.google.com/file/d/1QJawO76nUeO6yQYVwdw67HH-Wy2BWzZu/view?usp=sharing
 
 Please use Camtasia (recorded using it) or a VLC player in order to watch the recording
-  https://www.techsmith.com/video-editor.html
-  https://www.videolan.org/index.html
+  https://www.techsmith.com/video-editor.html     https://www.videolan.org/index.html
 
 # General recommendation: Please review the documents in Documentation folder
 
