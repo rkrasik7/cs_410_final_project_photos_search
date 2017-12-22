@@ -21,9 +21,8 @@ Installer (in case it was installed) and define relevant System Environment vari
 
 a. Binding use UI thread (Dispatcher)
 
-b. As soon as Image Name is binded to the UI element it calls an ImageConverter. 
-     In this converter - load the actual image using asynchronous process so it won't 
-     block the UI thread
+b. As soon as Image Name is binded to the UI element it calls an ImageConverter. In this converter - load
+the actual image using asynchronous process so it won't block the UI thread
 
 4) After adding the items to the UI - start another multi-threaded loop
 
