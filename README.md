@@ -5,7 +5,7 @@ CS 410 Final Project (My Photos Search)
 General recommendation: Please review the documents in Documentation folder
 
 Link to Installer Download (Windows only!)
-• https://www.dropbox.com/s/ef38sas1o7vxji8/CoolPhotoSearchSetup.msi?dl=0
+https://www.dropbox.com/s/ef38sas1o7vxji8/CoolPhotoSearchSetup.msi?dl=0
 
 In order to compile and run in Visual Studio 2017 - there is need to uninstall the
 Installer (in case it was installed) and define relevant System Environment variables
@@ -18,9 +18,7 @@ Installer (in case it was installed) and define relevant System Environment vari
 (Metadata only)
 
 3) Next start a multi-threaded loop and in that loop - bind metadata Item to the UI list
-
 a. Binding use UI thread (Dispatcher)
-
 b. As soon as Image Name is binded to the UI element it calls an ImageConverter. In this converter - load
 the actual image using asynchronous process so it won't block the UI thread
 
