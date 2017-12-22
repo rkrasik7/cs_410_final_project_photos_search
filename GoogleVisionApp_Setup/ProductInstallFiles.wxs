@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Directory Id="dir586FB99686CFF72C77FC224F83CF07D4" Name="app_data">
+                <Directory Id="dirA3F411F50EA14421AEBAA71F1A9DF099" Name="lucene" />
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="ProductFilesComponentGroup">
+            <Component Id="cmpC672E19308E248E393718895CE88C432" Directory="dir586FB99686CFF72C77FC224F83CF07D4" Guid="194CCC15BCE94B7993A89355D05C846F">
+                <CreateFolder>
+                    <!--<util:PermissionEx User="Users" GenericAll="yes" />-->
+                    <Permission User="Everyone" GenericAll="yes" />
+                </CreateFolder>
+            </Component>
+            <Component Id="cmp6C0429AA0F2C4B0A9315A38F0B1C8B4C" Directory="dirA3F411F50EA14421AEBAA71F1A9DF099" Guid="3F85F79A00A9406AAC3609F2D9674D96">
+                <CreateFolder>
+                    <!--<util:PermissionEx User="Users" GenericAll="yes" />-->
+                    <Permission User="Everyone" GenericAll="yes" />
+                </CreateFolder>
+            </Component>
+            <Component Id="cmpA0C8D0A45AF723D8B22A026F6B16EE1E" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil3B2F8F6AA4F03A6F955F1F92BDE94540" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\AsyncEnumerable.dll" />
+            </Component>
+            <Component Id="cmpFDC7CA6AC505584EF22DA64F43F8C0BD" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil27A3E3CE8318179EC0F2C67C3B6E54F7" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\AsyncEnumerable.xml" />
+            </Component>
+            <Component Id="cmp4C605443E9148C34CA28CAD8DF7790AC" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8073B6B8B5CCDF0A7A6FF45A67034E34" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\cool-photos-search-57852b03daf7.json" />
+            </Component>
+            <!--<Component Id="cmpEA783D37BB57B535CC9283F4BBD6B659" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filD25CEFB8E578491D75678B596140BCDC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\CoolPhotoSearch.exe" />
+            </Component>-->
+            <Component Id="cmp90E8D816DC327760B5369FC24F68103F" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filEFA3646CF6803A933032B783824391AC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\CoolPhotoSearch.exe.config" />
+            </Component>
+            <!--<Component Id="cmpCC93E1EC8A0FA66D8EF6C761BEC7977E" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil36BF7BB3AC456CF38332E187E4084EB2" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\CoolPhotoSearch.pdb" />
+            </Component>-->
+            <Component Id="cmp034B85AF06382685A0844261267B281F" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil981DE8F76FC9DE4DE98C0C440C9250BC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.CommonProtos.dll" />
+            </Component>
+            <Component Id="cmpC5BD9BD9C3532A9481F9B64626FAFFDF" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filF71295EB57A9F36D25CD0D414945C0F6" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.CommonProtos.xml" />
+            </Component>
+            <Component Id="cmp4AB9C22EA7A48ECEE10DE8219B2464AF" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil75137F0226383D66ECDC81849926E206" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.dll" />
+            </Component>
+            <Component Id="cmp3D2F777A2B0514AC3F44C7FEC44466A4" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil56D9AA4EF79BB06B4980DADC39C7D97E" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.Grpc.dll" />
+            </Component>
+            <!--<Component Id="cmpAEF47209E7AAD1802B228420ED0BBA5C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil2CDBB9149CB3386C8ED028933A8E4CF8" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.Grpc.pdb" />
+            </Component>-->
+            <Component Id="cmp12DAEC54BDF07850720B58861025CC67" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil311221580B3F9D2B292DDD06DF7C055A" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.Grpc.xml" />
+            </Component>
+            <!--<Component Id="cmp78B593C2212BDEE31E1C26246759A60C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil06EDC6A7EA7760FFA17A1E78B5CD31FD" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.pdb" />
+            </Component>-->
+            <Component Id="cmpE314302F4659BE7DAEC569E2185535AC" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil1047D7DC3EEDEE0EC8BFFE7D5D53EDC1" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.Rest.dll" />
+            </Component>
+            <Component Id="cmp786E12C9F3A925C2E6F6914439B74CB6" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil6D9CF85AF289114AB8FB4B3ED3D75026" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.Rest.xml" />
+            </Component>
+            <Component Id="cmp79BE8CAA746AB3EC889B4DDBAA2A6F7C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil238E7947E89C46349FD822F9CE211CFB" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Api.Gax.xml" />
+            </Component>
+            <Component Id="cmp9367B101BB7FCA63713B37732E8269E0" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filA5D29FAD9F4F2AC791AE348DC844309B" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Auth.dll" />
+            </Component>
+            <Component Id="cmp53150FF2D934322B589C1B7BA63C1D10" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8DE7CACCC941C89E167E5D117AE3BC85" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Auth.PlatformServices.dll" />
+            </Component>
+            <Component Id="cmp3D1D73B8F6284F04EB7659442DF968CC" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil71433C6087A66AEED02438AB63A52C1F" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Auth.xml" />
+            </Component>
+            <Component Id="cmpF5453ABDBB6AA217BBFEA205C95DB8E5" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil7B4D91A8676C9BD86746EAD208D3964C" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Core.dll" />
+            </Component>
+            <Component Id="cmpB9B172CA22867977EBD13293661BCA74" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filB4505A5BB1A4FF11C2A05CCEFF048BE4" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Core.xml" />
+            </Component>
+            <Component Id="cmp3F66A3424942145FEA2D2B0FBFF89F64" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil0A242ED23335FE842E63036DFB646964" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.dll" />
+            </Component>
+            <Component Id="cmp7597F70D32D08AB4CAB67F4A87695D30" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8F811415B7C2499C19C82AABB0A3787C" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.PlatformServices.dll" />
+            </Component>
+            <Component Id="cmp82D7CC6A5D06B8446039BE998AD8CE43" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil5BA7CEECCA3A2C6B324AD39BE45D34A1" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Storage.v1.dll" />
+            </Component>
+            <Component Id="cmp5E2B041D7108C5BEDD9AC087C8127AA4" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filC9E84C348E4A3ECB2F19EBD8DE883C51" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.Storage.v1.xml" />
+            </Component>
+            <Component Id="cmpAA97C623B4F6A48C3D0C5AB80DFB25F0" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filB27479BF8EB487CDEE00B099380BE5B8" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Apis.xml" />
+            </Component>
+            <Component Id="cmpFB38943B333E1CEB8177B610F62EED25" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil089E8C69EDF92052B7DE318DC78097DC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Cloud.Storage.V1.dll" />
+            </Component>
+            <Component Id="cmpC7B836E4F6776595C04C6582137DC810" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filF8D2327C0F2A09DA382C5F29B082C261" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Cloud.Storage.V1.xml" />
+            </Component>
+            <Component Id="cmpC34E8F2EA2F19F49AF613359C2F4F2A8" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil141DB83E9DA19BAE85B90D153FEBB191" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Cloud.Vision.V1.dll" />
+            </Component>
+            <!--<Component Id="cmpF42F1B85AB2B405B5F33997853E833CD" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9094881D1C681227FBE156C5D761624B" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Cloud.Vision.V1.pdb" />
+            </Component>-->
+            <Component Id="cmp0C2D37EFAD94419F5B4020C3ED52508B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filE317AD9BEFAD97ABFA259F1FD1F150B2" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Cloud.Vision.V1.xml" />
+            </Component>
+            <Component Id="cmp3199BF26C57E9CC9F3C5B1E6038934C7" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filA5416604937ECCD1C86CA5B95B0DDF7D" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Protobuf.dll" />
+            </Component>
+            <Component Id="cmp38DA82088824C4B9353A2C4BA3FD4FD0" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil0992B4958E1613034C8E7C3CDED82052" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Google.Protobuf.xml" />
+            </Component>
+            <Component Id="cmpA322C367B31FEC009490E81D5ECA4D40" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filE94174F889493370D8B4C96FA8100CA2" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Grpc.Auth.dll" />
+            </Component>
+            <Component Id="cmp619FD25006118E3F6CC2C7D3C258A79C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filFF9BF2299485176195F5732B6BF9A264" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Grpc.Auth.xml" />
+            </Component>
+            <Component Id="cmp90D0018A0105CD16B53E37BE5124F752" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil3A111708623E69A0EF3619342C3805B9" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Grpc.Core.dll" />
+            </Component>
+            <Component Id="cmp97A2974B3345C51527D54EA2C632FD7D" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8B184BC7D6A3833C22A2BED7E118E781" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Grpc.Core.xml" />
+            </Component>
+            <Component Id="cmpDD76C137A95BB68B923EC1D142B07D4A" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil0FACF905C88E3D69D07D00401095C912" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\grpc_csharp_ext.x64.dll" />
+            </Component>
+            <Component Id="cmp04A3CED5D5985D2053A10719C8E1AFEC" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9849AFDF36ACC84AB723E9D6EBDBA82E" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\grpc_csharp_ext.x86.dll" />
+            </Component>
+            <Component Id="cmp09ADA9DA5F21EAF2F11542CE35F9683A" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filEE78D6FB57DEFDF3915FA6268C6CBEC3" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\ICSharpCode.SharpZipLib.dll" />
+            </Component>
+            <Component Id="cmpC27600EC40DBE99AB0D58CF111EFE5CF" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filC824951B3118639BA91B80B2D57F5C28" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\libgrpc_csharp_ext.x64.dylib" />
+            </Component>
+            <Component Id="cmpD3F1DBE6410743FF0C165B3FCAA54736" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil627CCAD0571A091C4DF40E30A494BE2C" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\libgrpc_csharp_ext.x64.so" />
+            </Component>
+            <Component Id="cmpDDD0AF63508BD55996B597C407C3B7CB" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filE15AB0EF909A9EE4A026DD4C8A5A3B1A" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\libgrpc_csharp_ext.x86.dylib" />
+            </Component>
+            <Component Id="cmp11A6252B79B16511329E5E5041532CD9" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filD6D772071319277145A42A92C50ED830" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\libgrpc_csharp_ext.x86.so" />
+            </Component>
+            <Component Id="cmpFCC677A21690DBBE447B33825E427F74" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil1A610D08979C2AC5691C8662114AD1FA" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Analyzers.dll" />
+            </Component>
+            <!--<Component Id="cmpBC623AA7850C6D166CA236E3D2814F9F" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil15054FE5B0E27B097C9FC73B7A074B30" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Analyzers.pdb" />
+            </Component>-->
+            <Component Id="cmp4DDE9A405C30E468F13CE311C1747DEB" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil806991B5985F38AD8D51F5A92F74CE2D" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Analyzers.xml" />
+            </Component>
+            <Component Id="cmpFB6A7A19E840A1B3A0B6F43C6A2D1459" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil09550D1B38068FC786AFD70478743C6B" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Core.dll" />
+            </Component>
+            <!--<Component Id="cmp56F0ECD729C8FC8B8831974E9648A6C9" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil951BF69F038C63883C0A95F1C4F717B1" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Core.pdb" />
+            </Component>-->
+            <Component Id="cmpD45F6253409A9A563E6E5C90AFC2601E" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil3B7082841B6209092A6B184EB5110197" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Core.xml" />
+            </Component>
+            <Component Id="cmp267539EED6AED20655FAD756FC4B59C8" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9F46A13F17714FC07608ED5DD94F9849" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.FastVectorHighlighter.dll" />
+            </Component>
+            <!--<Component Id="cmp23C2833460E12319BF4C65887EF31004" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil5F8EF4A1AE2078EC6CFA0687BDA3EEAF" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.FastVectorHighlighter.pdb" />
+            </Component>-->
+            <Component Id="cmp1EB62988E57DA4A3BCA127C78B16ED67" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil96326E66313ABE434B42A50E0B178A05" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.FastVectorHighlighter.xml" />
+            </Component>
+            <Component Id="cmp294BDAD93A6EC33298343FFC600E942B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filC096ED196A205AEE210CCFB8BFAA9A35" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Highlighter.dll" />
+            </Component>
+            <!--<Component Id="cmp008764626DCBBDD6C395509BAF395616" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filB256DBD38D056C180528C2603ECFCABC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Highlighter.pdb" />
+            </Component>-->
+            <Component Id="cmp995FB0A3159366CC6EE74963878B2B8E" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil78300AECFE0746CA11F074A401501FA4" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Highlighter.xml" />
+            </Component>
+            <Component Id="cmpC45C33397F017FDE91E5D2B46235AADB" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil0DF664CCD626FAC0BA6E17E4DC81F03E" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Memory.dll" />
+            </Component>
+            <!--<Component Id="cmp403090B91E8DD77F19D6FB510B8A43DB" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil1D7563878E7260ABDB024E70CE865142" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Memory.pdb" />
+            </Component>-->
+            <Component Id="cmpF155BBF41521C1181AAE2F33BA40153B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9EBB3D29622D2E9019BF3B387C3E9C84" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Memory.xml" />
+            </Component>
+            <Component Id="cmpBC6F3B84761358C005AFE4AD94A1F31D" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil6ED69922A05913C984467B74472A1D17" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Queries.dll" />
+            </Component>
+            <!--<Component Id="cmpA08DEBB9637951828BDCB65D81B5983A" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9B153162391004BCB4DA264FC9104176" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Queries.pdb" />
+            </Component>-->
+            <Component Id="cmpC9C2533E74BD80A6DC5F90066A97C14B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8BF986887945F26C1DF07BECA2BA126A" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Queries.xml" />
+            </Component>
+            <Component Id="cmp06FA8A1D6160E58E012DAD704BDA99BA" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil7CB9F2799914ED69668222E9AA24CFDA" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Regex.dll" />
+            </Component>
+            <!--<Component Id="cmp4AB2C840239B2A63AFE5D46249E8AC5B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil2CB5FBE7DA3B21EFCC80FEF8ACC11FF7" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Regex.pdb" />
+            </Component>-->
+            <Component Id="cmp0E75C16365D12C1448C72DD6A7DEE4F1" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filFCF8B76CA36AD238DC5E5DCA9A9F0730" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Regex.xml" />
+            </Component>
+            <Component Id="cmpEA7BEA27FD030F79CC3155DB2DA4CADA" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil04808C7F15CA61F61B91917FB0EA5AC9" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SimpleFacetedSearch.dll" />
+            </Component>
+            <!--<Component Id="cmp78425ECA3CFC72D74ED460D65870F92F" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil201FEDB3AC6DAC1F0F88ACC3C6B8CA5A" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SimpleFacetedSearch.pdb" />
+            </Component>-->
+            <Component Id="cmp72DF01A208E0F21A54D390BF9E9E5343" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filC8102DE99A79948F08EEF06616FF6513" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SimpleFacetedSearch.xml" />
+            </Component>
+            <Component Id="cmp6C0C83D5ADE9AD6E8657D988916C4404" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil86B3AEEA06DA0F2D752CB2C52E49C8AA" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Snowball.dll" />
+            </Component>
+            <!--<Component Id="cmpA12877FD2383B99F41F05C35910AFC4C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filD48FDD7EE7BEDCA26E1D75E7F492E943" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Snowball.pdb" />
+            </Component>-->
+            <Component Id="cmpAAE4C7C090488E6B6DC70CD2D60E7FE7" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil019D5A0D8EDD0B0D08B5CC0485493766" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.Snowball.xml" />
+            </Component>
+            <Component Id="cmpF73400E39E04F661D563133BE2EB88F5" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil3C63ECA1D9812348A80CA5CE5F7AA437" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SpellChecker.dll" />
+            </Component>
+            <!--<Component Id="cmpB8D7F802325260BAB22E42904313681A" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil65327D1088E57601F8A6BC9A9BD0C7CC" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SpellChecker.pdb" />
+            </Component>-->
+            <Component Id="cmpF9D78F92FD54F1D5CDEDCD45C204FB65" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil46D26F9F9C61A7EF75713790167B2C90" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.Contrib.SpellChecker.xml" />
+            </Component>
+            <Component Id="cmp48E3124CC78F3BCA29C54BC263F3360D" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil9A1F63D259520AB73918F653E2A01E78" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.dll" />
+            </Component>
+            <Component Id="cmp3DCE245BA44B8E14CF3793E61C9AE8F1" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil81CD0EC0642A558F1A6183B0FB93C3BF" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.ObjectMapping.dll" />
+            </Component>
+            <Component Id="cmpBD844A066B869A92F4ACF8CDEEAC9FD9" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8A842A4FA319F49EEA454E1A01D982A3" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.ObjectMapping.xml" />
+            </Component>
+            <!--<Component Id="cmpB25E39D8AA38FF386D64F3F534344BBD" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filF7E2B7EAADD7D4D3903EB0B7131ECD9F" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.pdb" />
+            </Component>-->
+            <Component Id="cmpF0C41DB44700B39CF7348C48C4F97089" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filAEB1DB14504B4ABFBBA2D680E74FAA13" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Lucene.Net.xml" />
+            </Component>
+            <Component Id="cmpB7B0FD91AD8CF0EB4D426E4C3DA389B8" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil8E0DDF170FDBE9627DB3EB52ECF1D445" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Newtonsoft.Json.dll" />
+            </Component>
+            <Component Id="cmpF094EC35C05E0D14725721A52326D02E" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil217665543F20223C3F58C4971D8D6CA4" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\Newtonsoft.Json.xml" />
+            </Component>
+            <Component Id="cmp6F73F93E97FA6277283C178B4C3E91AC" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filD393B6774E109C30A85C50D10F03C918" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Interactive.Async.dll" />
+            </Component>
+            <Component Id="cmpE4F92A43CE5B232153EC1C0D378BF3F5" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil4FECA589D0207FB248A76202E8777014" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Interactive.Async.xml" />
+            </Component>
+            <Component Id="cmp7ACFED688F658A227B9CED267B3EE51C" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filEA1766F2FC6B1641E253E3FB59179206" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Net.Http.dll" />
+            </Component>
+            <Component Id="cmp0A79B6A57ECBB013A2D07EB88B5F980F" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil5EF3F8B84738B0175052540596575114" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Security.Cryptography.Algorithms.dll" />
+            </Component>
+            <Component Id="cmp7C1560666FCB69F9DD6103AFCEBC13B7" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil20B22DDCE6C196E178D21677A456F649" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Security.Cryptography.Encoding.dll" />
+            </Component>
+            <Component Id="cmpE1AE7BD950CBA9855158D96209BA625B" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="fil1EEACCBB51D9A49C6A8DA66894385474" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Security.Cryptography.Primitives.dll" />
+            </Component>
+            <Component Id="cmp9E105DAEEE8962719EF9A9778E5B09C3" Directory="INSTALLFOLDER" Guid="*">
+                <File Id="filD818381256A20FBC6801FF8AF4299053" KeyPath="yes" Source="$(var.GoogleVisionAPI_App.ProjectDir)\bin\debug\System.Security.Cryptography.X509Certificates.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<Product Id="6FAF052E-0ED8-4CD8-8495-A5024376756B" Name="Cool Photo Search" 
+           Language="1033" 
+           Version="1.0.0.0" Manufacturer="CoolPhotoSearch" UpgradeCode="2f97b77b-dd0e-4750-a8fc-450f9d220c22">  <!--?include ProductInstallFiles.wxs ?-->
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="CoolPhotoSearch" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+    <Feature Id="ProductFeature1" Title="CoolPhotoSearch" Level="1">
+      <ComponentGroupRef Id="ProductFilesComponentGroup" />
+      <ComponentRef Id="cmpDesktopShortcut" />
+    </Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+		    <Directory Id="DesktopFolder" SourceName="Desktop" />
+            <Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="CoolPhotoSearch" />
+			</Directory>		    	    
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			 <Component Id="ProductComponent">
+         <File Source="$(var.GoogleVisionAPI_App.TargetPath)" />
+         <Environment Id ="GOOGLE_APPLICATION_CREDENTIALS"
+                      Name="GOOGLE_APPLICATION_CREDENTIALS" Action="set" Part="last" System="yes"
+                      Value="[INSTALLFOLDER]cool-photos-search-57852b03daf7.json" Permanent="no"/>
+			 </Component>      
+		</ComponentGroup>
+	</Fragment>
+
+    <Fragment>
+        <Component Id="cmpDesktopShortcut" Guid="40679639BCCA4ECB958C78A49072F101" Directory="DesktopFolder" >
+            <Shortcut Id="MyDesktopShortcut"
+                      Name="Cool Photo Search"
+                      Description="Cool Photo Search"
+                      Directory="DesktopFolder"
+                      Target="[INSTALLFOLDER]CoolPhotoSearch.exe"
+                      WorkingDirectory="INSTALLFOLDER"/>
+            <RegistryValue Root="HKCU" Key="Software\CoolPhotoSearch" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+    </Fragment>
+</Wix>

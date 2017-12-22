@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cool-photos-search",
+  "private_key_id": "57852b03daf7e25e228458f204de3b92fb81ec01",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCxAj15707iBM5j\nOAqXwCjoSe84qxnXjUqYYCebvaUioqyDgsUlpWyUZwwYbiPZMagDb27rXcR4+oRG\nEgj4AGh7pGV8nMXyGAF5502OKXjdDmt06LSnG/k1Gmk/jO0NOWe6tn8d7BPWFq4+\nygCG9VGp80sVezWDw05xyphvTW09xc0TAPirsLKn7wh6+dsgKVLUwswh5S2R9KHr\n/GhH9y0MX1ApKKPPUrGw/HtuPPvRFb7X8TPvNvU5v531L/HQ3jZ46YAlb6H+Sxaa\nJslX5K8lYeLdlXNgCinVWKabpbLUCjj5KhCMKgn+C2kpUxVr31XuasD7NrE4Db7k\nCqxR1vPNAgMBAAECggEAMD9bkWp01m+X7/x9CqsCm3pXndspcpMdI5aGBVH2eo/b\ntQcGhMHn7DWAWwJefBuoX7NWiQoofQ9P0ael0S+PSzBex04WOGxprpgpEBhmzN5a\n1OV/JFOgJGTcDknz7VhZ2U9YK8hHCeJpwUyfQyoIBep+a08HobAxKBwgW6o/ngfg\n9qqkxqGTgbI6D2uZnSBb/rpB28N/2iIUDjbCYxLIzFyyj5x2vfugwK6NY7ZuVRCv\ns/PggTspLHZ6j3ZhBTnU2G0nv4lah50iP0ZxGdobUEW34PbrfDeZGA0SrmdeJovE\nsA6RShXIviHy5KlvsVC0iTKd2UNgZoV8JkWRUhF1QwKBgQDwuQgsdi8WUxfRUplk\nWbes5BKCaxj8mUZJl9cDRgxWXw0u4hRlY4bzPr47L0Rz28E30AKguucqnLF639g3\nYJCs+abI2JtxdzVyAeTDCjZ9jSakeUwcCp+HJVxezDb1GKemcWxzrl+bt/AfU5KS\nwprh7DM319ztFsvr6MaARUXKBwKBgQC8Pg+XgNE5WA/Rnwb1uOFQFSDkSW0eUzQB\nsbjqVl/Ae8k/4HoGIyIG4m92VYtoZthPgQFgtTc6y0NVP+CuhzhZDD2lxUr949FD\n2vctFfdSagVfKB8AUIHMA/966iMzwzJRIGPGSaMJnzpK/oLyasdrD3ayzpDaDOxY\nVYE96vMuiwKBgE63wzN+5kD/pR8/SoflSsoPvvnE+ePIX5K7Q4V/h5NK++2j4pWR\nKVUr5FtIRrM4XoPY0rMqy2NE4EjVIEhjnIvkC6VMJ/C/0ctZUSxyj4UY/lT0kW3u\nD2LLVdxuHV6i1Ff6aUOe9wbd7HjiBGFXn/xXGByfy1AAj2iysw7JGFxLAoGAEoJX\nriHwcJ8EDyx/1rFzFhi9vzSpEg5EUtZSxFfx2k9RnoJH/Up/EgY5x3zp1D4ojsi0\nhfnLkHBkEoHRadfJ5peZiC86DHTWIsHpA/ng862REaY0RiekW5cZC9Dx3SkYTXnN\n1bVv3oZViQI1hfiR2ykOFs7Q11/l7Vma96eeebkCgYBLs76d3fbZVQlMDNLJfgm2\ny/5o6G6NWU27SzEAottQiDDqjBgPKDs43rl8xd2vtt8RUHjSrvkPT7vKOWPmRmye\n3HqK86a53mQZANNGgQEMSDw/VHLfSl6ne4gTZFvsF/XH/cwO6WsSlfXek8jmrM1g\neIRGfk80QKU/Bo/v3Qp94g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "wpf-image-gallery@cool-photos-search.iam.gserviceaccount.com",
+  "client_id": "117874515508297219017",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wpf-image-gallery%40cool-photos-search.iam.gserviceaccount.com"
+}

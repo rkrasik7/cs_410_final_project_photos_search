@@ -1,0 +1,744 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lucene.Net.ObjectMapping</name>
+    </assembly>
+    <members>
+        <member name="T:Lucene.Net.Documents.DocumentObjectTypeKind">
+            <summary>
+            Defines the kind of types used when storing type information of a mapped object to a Document.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.DocumentObjectTypeKind.Actual">
+            <summary>
+            The actual / dynamic type of the object.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.DocumentObjectTypeKind.Static">
+            <summary>
+            The static (compile-time) type of the object.
+            </summary>
+        </member>
+        <member name="T:Lucene.Net.Documents.ObjectMappingExtensions">
+            <summary>
+            Extension class to help mapping objects to Documents and vice versa.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.ObjectMappingExtensions.FieldActualType">
+            <summary>
+            The name of the field which holds the object's actual type.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.ObjectMappingExtensions.FieldStaticType">
+            <summary>
+            The name of the field which holds the object's static type.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.ObjectMappingExtensions.FieldSource">
+            <summary>
+            The name of the field which holds the JSON-serialized source of the object.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.ObjectMappingExtensions.FieldTimestamp">
+            <summary>
+            The name of the field which holds the timestamp when the document was created.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Documents.ObjectMappingExtensions.settings">
+            <summary>
+            The JsonSerializerSettings for serialization and deserialization of objects to/from JSON.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Documents.ObjectMappingExtensions.ToDocument``1(``0)">
+            <summary>
+            Maps the source object to a Lucene.Net Document.
+            </summary>
+            <typeparam name="TSource">
+            The Type of the source object to map.
+            </typeparam>
+            <param name="source">
+            The source object to map.
+            </param>
+            <returns>
+            An instance of Document that represents the mapped object.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Documents.ObjectMappingExtensions.ToDocument``1(``0,Lucene.Net.Mapping.MappingSettings)">
+            <summary>
+            Maps the source object to a Lucene.Net Document.
+            </summary>
+            <typeparam name="TSource">
+            The Type of the source object to map.
+            </typeparam>
+            <param name="source">
+            The source object to map.
+            </param>
+            <param name="mappingSettings">
+            The MappingSettings to use.
+            </param>
+            <returns>
+            An instance of Document that represents the mapped object.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Documents.ObjectMappingExtensions.ToObject``1(Lucene.Net.Documents.Document)">
+            <summary>
+            Maps the data from the given Document to an object of type TObject.
+            </summary>
+            <typeparam name="TObject">
+            The type of object to map to.
+            </typeparam>
+            <param name="doc">
+            The Document to map to an object.
+            </param>
+            <returns>
+            An instance of TObject.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Documents.ObjectMappingExtensions.ToObject(Lucene.Net.Documents.Document)">
+            <summary>
+            Maps the data from the given Document to an object of type TObject.
+            </summary>
+            <param name="doc">
+            The Document to map to an object.
+            </param>
+            <returns>
+            An instance of object.
+            </returns>
+        </member>
+        <member name="T:Lucene.Net.Index.ObjectMappingExtensions">
+            <summary>
+            ObjectMapping related Extensions for the Lucene.Net.Index namespace.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Add``1(Lucene.Net.Index.IndexWriter,``0)">
+            <summary>
+            Adds the specified object to the given IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to add.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to use.
+            </param>
+            <param name="obj">
+            The object to write.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Add``1(Lucene.Net.Index.IndexWriter,``0,Lucene.Net.Analysis.Analyzer)">
+            <summary>
+            Adds the specified object to the given IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to add.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to use.
+            </param>
+            <param name="obj">
+            The object to write.
+            </param>
+            <param name="analyzer">
+            The Analyzer to use.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Update``1(Lucene.Net.Index.IndexWriter,``0,Lucene.Net.Search.Query)">
+            <summary>
+            Updates the specified object in the IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to update.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to update the object in.
+            </param>
+            <param name="obj">
+            The new object to write.
+            </param>
+            <param name="selection">
+            The Query which selects the item in the index.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Update``1(Lucene.Net.Index.IndexWriter,``0,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query)">
+            <summary>
+            Updates the specified object in the IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to update.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to update the object in.
+            </param>
+            <param name="obj">
+            The new object to write.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the update operation to.
+            </param>
+            <param name="selection">
+            The Query which selects the item in the index.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Update``1(Lucene.Net.Index.IndexWriter,``0,Lucene.Net.Search.Query,Lucene.Net.Analysis.Analyzer)">
+            <summary>
+            Updates the specified object in the IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to update.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to update the object in.
+            </param>
+            <param name="obj">
+            The new object to write.
+            </param>
+            <param name="selection">
+            The Query which selects the item in the index.
+            </param>
+            <param name="analyzer">
+            The Analyzer to use.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.Update``1(Lucene.Net.Index.IndexWriter,``0,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,Lucene.Net.Analysis.Analyzer)">
+            <summary>
+            Updates the specified object in the IndexWriter.
+            </summary>
+            <typeparam name="T">
+            The type of the object to update.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to update the object in.
+            </param>
+            <param name="obj">
+            The new object to write.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the update operation to.
+            </param>
+            <param name="selection">
+            The Query which selects the item in the index.
+            </param>
+            <param name="analyzer">
+            The Analyzer to use.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.DeleteDocuments(Lucene.Net.Index.IndexWriter,System.Type,Lucene.Net.Search.Query)">
+            <summary>
+            Deletes the documents for objects of the given type matching the given selection.
+            </summary>
+            <param name="writer">
+            The IndexWriter to delete the documents from.
+            </param>
+            <param name="type">
+            The type of the object to delete documents for.
+            </param>
+            <param name="selection">
+            The Query which selects the documents to delete.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.DeleteDocuments(Lucene.Net.Index.IndexWriter,System.Type,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query)">
+            <summary>
+            Deletes the documents for objects of the given type matching the given selection.
+            </summary>
+            <param name="writer">
+            The IndexWriter to delete the documents from.
+            </param>
+            <param name="type">
+            The type of the object to delete documents for.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="selection">
+            The Query which selects the documents to delete.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.DeleteDocuments``1(Lucene.Net.Index.IndexWriter,Lucene.Net.Search.Query)">
+            <summary>
+            Deletes the documents for objects of the given type matching the given selection.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to delete documents for.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to delete the documents from.
+            </param>
+            <param name="selection">
+            The Query which selects the documents to delete.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Index.ObjectMappingExtensions.DeleteDocuments``1(Lucene.Net.Index.IndexWriter,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query)">
+            <summary>
+            Deletes the documents for objects of the given type matching the given selection.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to delete documents for.
+            </typeparam>
+            <param name="writer">
+            The IndexWriter to delete the documents from.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="selection">
+            The Query which selects the documents to delete.
+            </param>
+        </member>
+        <member name="T:Lucene.Net.Mapping.IObjectMapper">
+            <summary>
+            Defines the contract for a class that can map objects to documents.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Mapping.IObjectMapper.AddToDocument``1(``0,Lucene.Net.Documents.Document)">
+            <summary>
+            Adds the given source object to the specified Document.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to add.
+            </typeparam>
+            <param name="source">
+            The source object to add.
+            </param>
+            <param name="doc">
+            The Document to add the object to.
+            </param>
+        </member>
+        <member name="T:Lucene.Net.Mapping.JsonObjectMapper">
+            <summary>
+            Implements the IObjectMapper interface using a JSON serialization to identify all the properties and nested
+            objects to map/add to a Lucene.Net Document. This mapper doesn't store any of the fields on the document but
+            instead just adds them to be indexed as appropriate.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Mapping.JsonObjectMapper.serializer">
+            <summary>
+            The JsonSerializer to use.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Mapping.JsonObjectMapper.AddToDocument``1(``0,Lucene.Net.Documents.Document)">
+            <summary>
+            Adds the given source object to the specified Document.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to add.
+            </typeparam>
+            <param name="source">
+            The source object to add.
+            </param>
+            <param name="doc">
+            The Document to add the object to.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Mapping.JsonObjectMapper.Add(Lucene.Net.Documents.Document,System.String,Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Adds the given JToken to the specified Document.
+            </summary>
+            <param name="doc">
+            The Document to add to.
+            </param>
+            <param name="prefix">
+            The prefix to use for field names.
+            </param>
+            <param name="token">
+            The JToken to add.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Mapping.JsonObjectMapper.AddProperties(Lucene.Net.Documents.Document,System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Adds the properties of the given JObject to the specified Document.
+            </summary>
+            <param name="doc">
+            The Document to add the properties to.
+            </param>
+            <param name="prefix">
+            The prefix to use for field names.
+            </param>
+            <param name="obj">
+            The JObject to add.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Mapping.JsonObjectMapper.AddArray(Lucene.Net.Documents.Document,System.String,Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            Adds the elements of the given JArray to the specified Document.
+            </summary>
+            <param name="doc">
+            The Document to add the elements to.
+            </param>
+            <param name="prefix">
+            The prefix to use for field names.
+            </param>
+            <param name="array">
+            The JArray to add.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Mapping.JsonObjectMapper.MakePrefix``1(System.String,``0)">
+            <summary>
+            Makes a prefix for field names.
+            </summary>
+            <typeparam name="TAdd">
+            The Type of the last part to add to the prefix.
+            </typeparam>
+            <param name="prefix">
+            The existing prefix to extend.
+            </param>
+            <param name="add">
+            The part to add to the prefix.
+            </param>
+            <returns>
+            A string that can be used as prefix for field names.
+            </returns>
+        </member>
+        <member name="T:Lucene.Net.Mapping.MappingSettings">
+            <summary>
+            Defines settings for mapping objects to Lucene.Net Documents.
+            </summary>
+        </member>
+        <member name="F:Lucene.Net.Mapping.MappingSettings.Default">
+            <summary>
+            The default MappingSettings.
+            </summary>
+        </member>
+        <member name="P:Lucene.Net.Mapping.MappingSettings.ObjectMapper">
+            <summary>
+            Gets or stes the IObjectMapper to use.
+            </summary>
+        </member>
+        <member name="T:Lucene.Net.Search.ObjectMapping">
+            <summary>
+            Helper class for object mapping related to search in Lucene.Net.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMapping.GetTypeFilter(System.Type)">
+            <summary>
+            Gets a Filter to restrict results to documents that are mapped from objects of the given type.
+            </summary>
+            <param name="type">
+            The Type to get the filter for.
+            </param>
+            <returns>
+            An instance of Filter.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMapping.GetTypeFilter``1">
+            <summary>
+            Gets a Filter to restrict results to documents that are mapped from objects of the given type.
+            </summary>
+            <typeparam name="T">
+            The Type to get the filter for.
+            </typeparam>
+            <returns>
+            An instance of Filter.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMapping.GetTypeFilter(System.Type,Lucene.Net.Documents.DocumentObjectTypeKind)">
+            <summary>
+            Gets a Filter to restrict results to documents that are mapped from objects of the given type.
+            </summary>
+            <param name="type">
+            The Type to get the filter for.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the filter on.
+            </param>
+            <returns>
+            An instance of Filter.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMapping.GetTypeFilter``1(Lucene.Net.Documents.DocumentObjectTypeKind)">
+            <summary>
+            Gets a Filter to restrict results to documents that are mapped from objects of the given type.
+            </summary>
+            <typeparam name="T">
+            The Type to get the filter for.
+            </typeparam>
+            <param name="kind">
+            The kind of type to restrict the filter on.
+            </param>
+            <returns>
+            An instance of Filter.
+            </returns>
+        </member>
+        <member name="T:Lucene.Net.Search.ObjectMappingExtensions">
+            <summary>
+            Extension class to help searching for Documents which are mapped from objects.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Search.Query,System.Int32)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,System.Int32)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Search.Query,System.Int32)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,System.Int32)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Search.Query,System.Int32,Lucene.Net.Search.Sort)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <param name="sort">
+            A Sort object that defines how to sort the results.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,System.Int32,Lucene.Net.Search.Sort)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <param name="sort">
+            A Sort object that defines how to sort the results.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Search.Query,System.Int32,Lucene.Net.Search.Sort)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <param name="sort">
+            A Sort object that defines how to sort the results.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,System.Int32,Lucene.Net.Search.Sort)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="numResults">
+            The number of results to return.
+            </param>
+            <param name="sort">
+            A Sort object that defines how to sort the results.
+            </param>
+            <returns>
+            An instance of TopDocs.
+            </returns>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Search.Query,Lucene.Net.Search.Collector)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query and Collector.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="results">
+            The Collector to use to gather results.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search(Lucene.Net.Search.Searcher,System.Type,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,Lucene.Net.Search.Collector)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query and Collector.
+            </summary>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="type">
+            The type of the object to search documents for.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="results">
+            The Collector to use to gather results.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Search.Query,Lucene.Net.Search.Collector)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query and Collector.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="results">
+            The Collector to use to gather results.
+            </param>
+        </member>
+        <member name="M:Lucene.Net.Search.ObjectMappingExtensions.Search``1(Lucene.Net.Search.Searcher,Lucene.Net.Documents.DocumentObjectTypeKind,Lucene.Net.Search.Query,Lucene.Net.Search.Collector)">
+            <summary>
+            Searches for documents mapped from the given type using the specified query and Collector.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object to search documents for.
+            </typeparam>
+            <param name="searcher">
+            The Searcher to search on.
+            </param>
+            <param name="kind">
+            The kind of type to restrict the search to.
+            </param>
+            <param name="query">
+            The Query which selects the documents.
+            </param>
+            <param name="results">
+            The Collector to use to gather results.
+            </param>
+        </member>
+        <member name="T:Lucene.Net.Utils">
+            <summary>
+            Utilities for this library.
+            </summary>
+        </member>
+        <member name="M:Lucene.Net.Utils.GetTypeName(System.Type)">
+            <summary>
+            Gets the type name (for serialization) for the given type.
+            </summary>
+            <param name="type">
+            The Type to get the name for.
+            </param>
+            <returns>
+            A String that can be used to uniquely identify the type.
+            </returns>
+            <remarks>
+            This creates a type name in the format "My.Name.Space.MyClass, MyAssembly", i.e. the type and assembly name
+            without any extra information such as public key, assembly version number or culture.
+            </remarks>
+        </member>
+    </members>
+</doc>
